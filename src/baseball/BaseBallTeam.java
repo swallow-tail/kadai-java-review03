@@ -8,8 +8,8 @@ public class BaseBallTeam {
     private int draw;    // 引分
 
     //int型変数 win, lose を一時的にdouble型に変換して除算する（結果はdouble型・戻り値あり)
-    public static double getRate(double win, double lose) {
-        double rate = (win) / (win + lose);
+    public double getRate() {
+        double rate = (double) win / (win + lose);
         return rate;     // 勝率
     }
 
@@ -27,8 +27,8 @@ public class BaseBallTeam {
 
     // 勝敗情報(レポート)のメソッド
     public void report() {
-        getRate(win, lose);
-    System.out.println(name +" の2022年の成績は " + win + "勝 " + lose + "敗 " + draw + "分、 " + "勝率は " + getRate(win, lose) + "です。");
+        getRate();
+    System.out.println(name +" の2022年の成績は " + win + "勝 " + lose + "敗 " + draw + "分、 " + "勝率は " + getRate() + "です。");
     }
 
     public String getName() {
